@@ -12,3 +12,6 @@ def Test_brach(a,b):
 
 for i in range(5):
     print("Hello World!")
+
+if __name__ == "__main__":
+    Test_brach(1,5)
