@@ -6,5 +6,9 @@
 
 import numpy as np
 
+def Test_brach(a,b):
+    for i in range(a):
+        print(b) 
+
 for i in range(5):
     print("Hello World!")
