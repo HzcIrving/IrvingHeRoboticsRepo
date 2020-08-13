@@ -87,11 +87,15 @@ def icp_matching(prev_pts,cur_pts):
             # 通过"ESC"退出仿真
             plt.gcf().canvas.mpl_connect('key_release_event',
                         lambda event: [exit(0) if event.key == 'escape' else None])
-            plt.plot(prev_pts[0, :], prev_pts[1, :], ".r")
-            plt.plot(cur_pts[0, :], cur_pts[1, :], ".b")
+            plt.plot(prev_pts[0, :], prev_pts[1, :], ".r",label="previous pts")
+            plt.plot(cur_pts[0, :], cur_pts[1, :], ".b",label="current pts")
             plt.plot(0.0, 0.0, "xr")
             plt.axis("equal")
+            plt.legend()
+            # plt.show()
+            plt.show()
             plt.pause(0.1)
+            # plt.close()
         # plt.show()
 
         indexes,error =nearest_neighbor_association(prev_pts,cur_pts)
