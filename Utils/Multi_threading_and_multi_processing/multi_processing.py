@@ -10,6 +10,9 @@ import time
 import os
 
 from multiprocessing import Process # 添加进程
+from multiprocessing import cpu_count
+
+print("CPU核数:{}".format(cpu_count()))
 
 def long_time_task():
     print("当前进程pid:{}".format(os.getpid())) # 获得pid号
@@ -31,7 +34,7 @@ if __name__ == "__main__":
         long_time_task()
 
     end = time.time()
-    print("用时{}s",format((end-start)))
+    print("用时{}s".format((end-start)))
 
     print("---------多进程，两个进程进行两次循环----------")
     print("当前母进程:{}".format(os.getpid()))
@@ -41,7 +44,7 @@ if __name__ == "__main__":
     print("等待所有子进程完成")
     p1.start()
     p2.start()
-    p1.join()
+    p1.join() # 通过join()让母进程堵塞
     p2.join()
     end2 = time.time()
     print("总共用时{}秒".format((end2-start2)))
