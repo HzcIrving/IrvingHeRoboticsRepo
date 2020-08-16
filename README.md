@@ -23,7 +23,5 @@ https://www.zhihu.com/search?type=content&q=Iterative%20Closest%20Point
 
 ### 关于Utils ### 
 Utils里面包含了很多可以用到的小工具，比如多线程，多进程，信号处理...
-
-    1. Multi_threading_and_multi_processing: 主要是多进程与多线程的实现  
-    
-
+ 
+  - Multi_threading_and_multi_processing: 主要是多进程与多线程的实现, 内含有独立的multi-processing与multi-threading的[攻略](https://github.com/HzcIrving/IrvingHeRoboticsRepo/tree/master/Utils/Multi_threading_and_multi_processing)
