@@ -5,13 +5,16 @@ IrvingHeRoboticsRepo
 
 ### 2020-08-09 
 ### 1 Localization 有关机器人定位算法的总结库
-#### 1.1. ICP --- Iterative Closet Point用于匹配点云
-https://www.zhihu.com/search?type=content&q=Iterative%20Closest%20Point  
+#### 1.1. [ICP](https://www.zhihu.com/search?type=content&q=Iterative%20Closest%20Point) --- Iterative Closet Point用于匹配点云
+
 
 ### 2. Signal Processing 有关信号处理算法的总结库
-#### 2.1 小波变换Wavelets 
-- (1) wavelets_test.py 可视化所有demo信号
-- (2)
+#### 2.1 [小波变换Wavelets](https://github.com/HzcIrving/IrvingHeRoboticsRepo/tree/master/Signal_Propressing/Wavelets%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2) 
+
+### 3. 强化学习RL 
+#### 3.1 [A3C(Asychronous Advantage Actor Critic)](https://github.com/HzcIrving/IrvingHeRoboticsRepo/tree/master/Reinforcement_Learning(for_robots)/A3C)
+
+
 
 
 
