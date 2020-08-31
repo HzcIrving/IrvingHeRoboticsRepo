@@ -1,0 +1,2 @@
+mapLayers = loadParkingLotMapLayers;
+plotMapLayers(mapLayers)
