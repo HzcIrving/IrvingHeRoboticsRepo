@@ -6,6 +6,8 @@
 """
 A3C
 Pytorch + multiprocessing
+我认为 A3C中的异步，体现在，只要worker做完一个episode的活动，就进行push and pull
+这里是异步的行为
 """
 
 import torch
@@ -164,7 +166,6 @@ def main():
         else:
             break
 
-    # sync
     [w.join() for w in workers]
 
     import matplotlib.pyplot as plt
