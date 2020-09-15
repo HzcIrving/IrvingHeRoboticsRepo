@@ -3,13 +3,21 @@
 Refs: 
 [知乎Motion Planning](https://www.zhihu.com/search?type=content&q=motion%20planning%20)
 
+### Code Instruction 
+1. Model Predictive Generator 模型预测的轨迹生成算法 
+
+Refs: 
+- (Howard, T., Kelly, A.: Optimal rough terrain trajectory generation for wheeled mobile robots.International Journal of Robotics Research 26(2), 141–166 (2007))
+- [BOSS无人车规划算法](https://blog.csdn.net/jja223/article/details/84206069)
+
+
+## Notes 阅读笔记 ------ 👇👇👇
 ### 1. From Robotics to autonomous driving 
 
 ### 2. Modeling the environment and techniques/环境建模 
 
 - RRT(RRT*...) 
 - Lattice  
-
 
 ### 3. Modern Approaches in autonomous driving 
 
@@ -18,8 +26,7 @@ Refs:
 - Spiral、Polynomial and Splines 
 - Function Optimization (优化一个state) 
 
-
-## Types of Path Constraints 
+### Types of Path Constraints 
 ### 存在哪些约束呢 ? 
 - **Local Constraints**: eg. avoid collision with obstacles(判断两个bounding box有没有相交，进行碰撞检测) 
 - **Differential Constraints**: eg.bounded curvature(曲率)--- 你方向盘转多大，车本身存在运动限制, curvature与运动之间的关系 

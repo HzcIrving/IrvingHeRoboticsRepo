@@ -9,6 +9,44 @@
 >> 此时已经知道全局路径信息
 >> 结合局部障碍物信息、交通规则等
 >> 生成一系列轨迹并选出最优轨迹
+
+>> 通过Model Predictive来解决BVP问题(BVP: Boundary Value Problem)
+>> A --> B(goal)
+>> state: x(x,y,theta) 3D
+>> action: u(v,k) velocity and curvature(油门刹车 & 方向盘)
+---------------------------------------------------------
+MPG属于control discretization
+-1- 车辆模型:Simple Car Model
+-2- 状态约束:
+    车辆导航约束(x,y,theta)
+    状态目标:(xc,yc,theta_c) --- > goal
+-3- 控制参数化:
+    车辆控制分为两个部分:
+    1) 基于线性速度方程 : v(p,t)
+    --- 常见velocity profile: constant profile、linear profile、linear ramp profile ...
+    --- 一般来说，速度配置参数是确定的
+
+    2) 基于路程的曲率方程: k(p,s) (s是路程)
+    --- second order spline profile 二次函数的曲率配置
+    --- 参数[k0,k1,k2,sf] 为了曲率平滑一般k0固定
+
+    综上，自由参数 params[free] = [k1,k2,sf].T
+
+-4- 初始化轨迹 --- 初始和最终状态进行离散，5个维度：
+    均匀采样所有可取的控制参数params[free], 根据模型得到相应的轨迹
+        1) relative intial and terminal pos (delta_x,delta_y)
+        2) relative heading (delta_theta)
+        3) initial curvature (k_i) (k0)
+        4) constant velocities (v) (+/-)
+    初始化根据行为规划中输出的目标未知(x,y,theta)取距离最近的几条对应的控制参数
+    (k1,k2,sf) --- 这样初始化的轨迹比较接近最优轨迹，优化速度快;
+
+-5- 轨迹优化 --- Jacobi矩阵
+    控制参数p的收敛方向计算, 优化目标使得目标函数C(x,p) --> 0
+    C(x,p2) = C(x,p1_) + J(p2-p1) (1阶Taylor)
+    优化目标： 目标函数小于某个值或者发散，发散取最接近的一组参数
+
+---------------------------------------------------------
 """
 
 import math
@@ -148,7 +186,7 @@ def optimization_trajectory(target,k0,p):
     轨迹优化
     target: end point
     k0: initial
-    p : current pose
+    p : [s,km,kf]
     :return: xc,yc,yawc,p
     """
     # 迭代max_iter次
@@ -224,7 +262,6 @@ def test_optimize_trajectory(): # pragma: no cover
 def main():  # pragma: no cover
     print(__file__ + " start!!")
     test_optimize_trajectory()
-
-
-if __name__ == '__main__':
-    main()
+#
+# if __name__ == '__main__':
+#     main()
