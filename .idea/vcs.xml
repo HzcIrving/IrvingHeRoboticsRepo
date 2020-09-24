@@ -2,5 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Obstacle_Avoidance/GYM_collision_Avoidance/GYM_obs_avoidance" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Obstacle_Avoidance/GYM_collision_Avoidance/gym-collision-avoidance" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gym-collision-avoidance" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gym-collision-avoidance/gym_collision_avoidance/envs/policies/DRL_Long" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gym-collision-avoidance/gym_collision_avoidance/envs/policies/Python-RVO2" vcs="Git" />
   </component>
 </project>

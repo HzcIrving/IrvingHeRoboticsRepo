@@ -109,9 +109,10 @@ def SLS(x,y,phi):
         xd = -y/math.tan(phi) + x
         t = xd - math.tan(phi/2.0)
         u = phi
-        v = math.sqrt()
+        v = math.sqrt((x-xd)**2 + y**2)-math.tan(phi/2.0)
         return True,t,u,v
     elif y < 0.0 < phi < math.pi * 0.99:
+        xd = -y / math.tan(phi) + 
 
 # ====================================
 

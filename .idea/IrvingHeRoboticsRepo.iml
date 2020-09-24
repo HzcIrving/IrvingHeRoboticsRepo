@@ -6,6 +6,10 @@
       <sourceFolder url="file://$MODULE_DIR$/Reinforcement_Learning(for_robots)/A3C" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MotionPlanning/ModelPredictiveTrajectoryGenerator" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/MotionPlanning/HybirdAstar/Python" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Obstacle_Avoidance/GYM_collision_Avoidance/GYM_obs_avoidance/gym_collision_avoidance/envs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Obstacle_Avoidance/GYM_collision_Avoidance/GYM_obs_avoidance/gym_collision_avoidance/experiments" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Obstacle_Avoidance/GYM_collision_Avoidance/GYM_obs_avoidance/gym_collision_avoidance/tests" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Obstacle_Avoidance/CA_env " isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7 (IrvingHeRoboticsRepo) (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
